@@ -115,21 +115,20 @@ public class Main {<br/>
 
 ####输出结果
 before before say
--------------:class Decorator_type.DecoratorB
--------------:class Decorator_type.DecoratorA
+-------------:class Decorator_type.DecoratorB<br/>
+-------------:class Decorator_type.DecoratorA<br/>
 before say
--------------:class Decorator_type.DecoratorA
+-------------:class Decorator_type.DecoratorA<br/>
 -------------:class Decorator_type.ConcreteComponent
-Hello DesignerPattern！
+Hello DesignerPattern！<br/>
 -------------:class Decorator_type.DecoratorA
-after say
+after say<br/>
 -------------:class Decorator_type.DecoratorB
 after after say
 
 ------------------------------------邪恶分割线----------------------------------
 
 ####结果分析
-	目的是在ConcreteComponent中的say方法前后加入一些功能用以修饰，上述代码在调用e.say()方法时，因为
-Component是抽象类，具体方法在子类中，因为e的本质是DecoratorB,所以会调用DecoratorB的say方法，但是并
+	目的是在ConcreteComponent中的say方法前后加入一些功能用以修饰，上述代码在调用e.say()方法时，因为Component是抽象类，具体方法在子类中，因为e的本质是DecoratorB,所以会调用DecoratorB的say方法，但是并
 没有这个方法，所以去父类Decorator中寻找并调用，在Decorator的say方法中又调用了Component的say方法，重复了以上的操作。故出现以上的结果。
 
