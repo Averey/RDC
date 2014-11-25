@@ -4,9 +4,9 @@
 ------------------------------------邪恶分割线----------------------------------
 
 #####被装饰的抽象接口
-package Decorator_type;
+package Decorator_type;<br/>
 
-public interface Component {
+public interface Component {<br/>
 	public void say();
 }
 
@@ -101,8 +101,8 @@ public class DecoratorB extends Decorator {
 #####主函数
 package Decorator_type;
 
-public class Main {
-	public static void main(String args[]) {
+public class Main {<br/>
+	public static void main(String args[]) {<br/>
 		Component c = new ConcreteComponent();
 		Component d = new DecoratorA(c);
 		Component e = new DecoratorB(d);
@@ -131,7 +131,5 @@ after after say
 ####结果分析
 	目的是在ConcreteComponent中的say方法前后加入一些功能用以修饰，上述代码在调用e.say()方法时，因为
 Component是抽象类，具体方法在子类中，因为e的本质是DecoratorB,所以会调用DecoratorB的say方法，但是并
-没有这个方法，所以去父类Decorator中寻找并调用，在Decorator的say方法中又调用了Component的say方法，
-重复了以上的操作。故出现以上的结果。
-------------------------------------邪恶分割线----------------------------------
-------------------------------------邪恶分割线----------------------------------
+没有这个方法，所以去父类Decorator中寻找并调用，在Decorator的say方法中又调用了Component的say方法，重复了以上的操作。故出现以上的结果。
+
